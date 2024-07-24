@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from time import sleep
 
 
 class Registration:
@@ -24,10 +25,11 @@ class Registration:
     def click_submit(self):
         submit_button = self._driver.find_element(By.ID, 'form-submit')
         submit_button.click()
+        sleep(50)
 
     def alert_text(self):
-        alert = self._driver.find_element(By.CSS_SELECTOR, '.alert')
-        return alert.text()
+        text = self._driver.find_element(By.CSS_SELECTOR, '.alert').text
+        return text
     # def click_seven(self):
     #     self._driver.find_element(
     #             By.CSS_SELECTOR, '.keys span:nth-child(1)'
