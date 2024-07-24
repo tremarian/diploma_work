@@ -25,37 +25,9 @@ class Registration:
     def click_submit(self):
         submit_button = self._driver.find_element(By.ID, 'form-submit')
         submit_button.click()
-        sleep(50)
+    
 
     def alert_text(self):
         text = self._driver.find_element(By.CSS_SELECTOR, '.alert').text
         return text
-    # def click_seven(self):
-    #     self._driver.find_element(
-    #             By.CSS_SELECTOR, '.keys span:nth-child(1)'
-    #         ).click()
-
-    # def click_plus(self):
-    #     self._driver.find_element(
-    #         By.CSS_SELECTOR, '.keys span:nth-child(4)'
-    #     ).click()
-
-    # def click_eight(self):
-    #     self._driver.find_element(
-    #         By.CSS_SELECTOR, '.keys span:nth-child(2)'
-    #     ).click()
-
-    # def click_equal(self):
-    #     self._driver.find_element(
-    #         By.CSS_SELECTOR, '.keys span:nth-child(15)'
-    #     ).click()
-
-    # def text_result(self, time):
-    #     time = int(time)
-    #     WebDriverWait(self._driver, time+3).until(
-    #         EC.text_to_be_present_in_element(
-    #             (By.CSS_SELECTOR, "div.screen"), "15"
-    #             )
-    #         )
-    #     text = self._driver.find_element(By.CSS_SELECTOR, '.screen').text
-    #     return text
+    
