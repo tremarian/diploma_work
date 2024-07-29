@@ -5,6 +5,7 @@ class Auth:
     """
         Класс для работы со страницей авторизации и выбора портала.
     """
+    # кука s1
     def __init__(self, driver):
         self._driver = driver
         self._driver.get(

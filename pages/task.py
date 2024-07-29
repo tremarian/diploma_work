@@ -71,6 +71,7 @@ class Task:
             # '.sidepanel .page-title span'
             )
         text = name.get_attribute("title")
+        # text = name.text
         return text
 
     def fill_estimate(self, estimate: str):
