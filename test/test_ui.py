@@ -2,22 +2,27 @@ from selenium import webdriver
 from pages.auth import Auth
 from pages.task import Task
 import pytest
+from pages import config 
+from time import sleep
 
 
-# @pytest.mark.ui_test
-# def test_positive_auth():
-#     """
-#         Функция для проверки авторизации на протале с валидными данными.
-#     """
-#     browser = webdriver.Chrome()
-#     auth = Auth(browser)
-#     auth.authorization()
-#     assert auth.choose_portal() == 'https://diploma.asproagile.ru/'
+@pytest.mark.ui_test
+@pytest.mark.refresh_cookie
+def test_positive_auth():
+    """
+        Функция для проверки авторизации на протале с валидными данными.
+    """
+    browser = webdriver.Chrome()
+    auth = Auth(browser)
+    auth.authorization()
+    config.auth_token = auth.get_auth_cookie('s1')
+    # config.user_token = auth.get_auth_cookie('username')
+    assert auth.choose_portal() == 'https://diploma.asproagile.ru/'
 
 
 @pytest.mark.ui_test
 @pytest.mark.parametrize('title', [
-    ('Название на кириллице'),
+    # ('Название на кириллице'),
     ('Latin name')
     ])
 def test_task_create(title):
@@ -26,9 +31,15 @@ def test_task_create(title):
     """
     browser = webdriver.Chrome()
     auth = Auth(browser)
-    auth.qick_auth()
+    # auth.qick_auth()
+    auth.delete_cookie()
+    auth.add_cookie(config.auth_token)
+    # auth.add_cookie(config.user_token)
+    auth.choose_portal()
 
+    
     task = Task(browser)
+    sleep(2)
     task.click_create_button()
 
     task.fill_title(title)

@@ -44,16 +44,19 @@ class Auth:
         """
             Метод для быстрой авторизации
         """
-        email_input = self._driver.find_element(By.NAME, 'email')
-        email_input.send_keys('tremariansch@gmail.com')
 
-        password_input = self._driver.find_element(By.NAME, 'password')
-        password_input.send_keys('G51piAvu')
 
-        submit = self._driver.find_element(By.CSS_SELECTOR, '[type="submit"]')
-        submit.click()
+    def get_auth_cookie (self, cookie):
+        """
+            Попытка получить куки
+        """
+        token = self._driver.get_cookie(cookie)
+        return token
+    
+    def delete_cookie(self):
+        self._driver.delete_all_cookies()
 
-        portal = self._driver.find_element(
-            By.CSS_SELECTOR, '.select-product__tabs a:nth-child(2)'
-            )
-        portal.click()
+    def add_cookie (self, cookie):
+        self._driver.add_cookie(cookie)
+        self._driver.refresh()
+
