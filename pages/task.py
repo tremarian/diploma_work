@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from pages import config
 
 
 class Task:
@@ -10,9 +11,7 @@ class Task:
     """
     def __init__(self, driver):
         self._driver = driver
-        self._driver.get(
-            "https://diploma.asproagile.ru/_module/agile/view/backlog/1"
-            )
+        self._driver.get(f'{config.portal}_module/agile/view/backlog/1')
         self._driver.implicitly_wait(4)
 
     def click_create_button(self):
@@ -68,10 +67,8 @@ class Task:
         name = self._driver.find_element(
             By.CSS_SELECTOR,
             '.sidepanel .page-bar__title-inner .component-editable__content-inner'
-            # '.sidepanel .page-title span'
             )
         text = name.get_attribute("title")
-        # text = name.text
         return text
 
     def fill_estimate(self, estimate: str):
