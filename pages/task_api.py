@@ -16,5 +16,5 @@ class TaskApi:
             'name': name
         }
         resp = requests.post(self.url + 'api/v1/module/agile/issues/create', params=params, json=body)
-        assert resp.status_code == 200
+        return resp.json()
     # получить задачу https://{company}.aspro.cloud/api/v1/module/agile/issues/get/{id}
