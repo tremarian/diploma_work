@@ -16,5 +16,11 @@ def test_task_create():
         'name': 'Заголовок задачи'
     }
     resp = requests.post(config.portal + 'api/v1/module/agile/issues/create', params=params, json=body)
-    assert resp.status_code == 200
+    response = resp.json()
+    task_id = response.get('id')
+
+    resp2 = requests.get(f'{config.portal}api/v1/module/agile/issues/get/{task_id}')
+    assert resp2.status_code == 200
+
+    
     # получить задачу https://{company}.aspro.cloud/api/v1/module/agile/issues/get/{id}
