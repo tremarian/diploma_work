@@ -1,9 +1,9 @@
+import pytest
+import allure
 from selenium import webdriver
 from pages.auth import Auth
 from pages.task import Task
-import pytest
 from pages import config
-import allure
 
 
 @allure.id("AGILE-1")
@@ -24,6 +24,7 @@ def test_positive_auth():
         config.auth_token = auth.get_auth_cookie('s1')
     with allure.step("Сравнить текущий url с заданным порталом"):
         assert auth.get_current_url() == config.portal
+
 
 @allure.id("AGILE-2")
 @allure.feature("Создание задачи")
@@ -60,6 +61,7 @@ def test_task_create(title):
         task.click_toast()
     with allure.step("Сравнить заголовок задачи с заданным"):
         assert task.get_task_title() == title
+
 
 @allure.id("AGILE-2")
 @allure.feature("Создание задачи")
