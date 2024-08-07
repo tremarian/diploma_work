@@ -1,3 +1,6 @@
+# Конфигурационный файл для хранения значений id,
+# токенов и данных авторизации и т.п
+
 auth_token = {}
 portal = 'https://diploma.asproagile.ru/'
 user_login = '1545illegal@belgianairways.com'

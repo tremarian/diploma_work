@@ -22,7 +22,7 @@ class TaskApi:
 
         resp = requests.post(
             self.url + 'api/v1/module/agile/issues/create',
-            params=params, json=body
+            params=params, data=body
             )
         return resp.json()
 
@@ -65,6 +65,6 @@ class TaskApi:
 
         resp = requests.post(
             self.url + 'api/v1/module/agile/issues/create',
-            params=params, json=body
+            params=params, data=body
             )
         return resp.status_code

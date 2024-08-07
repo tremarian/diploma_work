@@ -7,7 +7,7 @@ from pages import config
 class Task:
     """
         Класс для работы со страницей бэклога
-        в Agile-проектах.
+        Agile-проекта в ui-тестах.
     """
     def __init__(self, driver):
         self._driver = driver

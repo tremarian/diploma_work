@@ -17,7 +17,7 @@ api = TaskApi(config.portal)
     ({
         'project_id': config.project_id,
         'workflow_stage_id': config.workflow_stage_id,
-        'name': 'Заголовок задачи'
+        'name': 'Заголовок api задачи'
     }, 200)
     ])
 def test_task_create_positive(body_resuest, status_code):

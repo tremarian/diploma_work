@@ -5,7 +5,7 @@ from pages import config
 
 class Auth:
     """
-        Класс для работы со страницей и токеном авторизации.
+        Класс для работы со страницей и токеном авторизации в ui-тестах.
     """
     def __init__(self, driver):
         self._driver = driver
