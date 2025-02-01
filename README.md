@@ -8,10 +8,10 @@
 <p>Задача — автоматизация UI- и API-тестов финального проекта.</p>
 <ul>
     <li>
-        <a href="https://shaimshaim.atlassian.net/wiki/spaces/~712020eb918776501d4b91845eb4f4528b68d7/pages/23560193/-+.+.+.Agile.">Тест план финального проекта</a>
+        <a href="https://drive.google.com/file/d/1rd6PYzz3EAOw7v5MpxgpJCs2R7BAVMB9/view?usp=drive_link">Тест план финального проекта</a>
     </li>
     <li>
-        <a href="https://shaimshaim.atlassian.net/wiki/spaces/~712020eb918776501d4b91845eb4f4528b68d7/pages/29196289/.+.+.Agile">Отчет о тестировании финального проекта</a>
+        <a href="https://drive.google.com/file/d/1BGyCN-h3T8O38qQdZDWe3dgklFOpZZ79/view?usp=drive_link">Отчет о тестировании финального проекта</a>
     </li>
 </ul>
 <h3>Структура проекта &#128196;</h3>
