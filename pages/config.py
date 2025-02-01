@@ -5,6 +5,6 @@ auth_token = {}
 portal = ''
 user_login = ''
 user_password = ''
-api_token = 'N1EwaEJuTFpjMnZFTW9TNFVBYWo1ZXB1MUpYUEd4OTlfMTIwOTY0'
+api_token = ''
 project_id = '1'
 workflow_stage_id = '1'
